@@ -2,8 +2,8 @@ import streamlit as st
 import google.generativeai as genai
 
 def configure_model():
-    genai.configure(api_key="AIzaSyCobdhkHPh_H-gVSqraSAxCr1X6cgl4nSw")
-
+    api_key = st.secrets["api_keys"]["GEMINI_API_KEY"]
+    genai.configure(api_key=api_key)
     generation_config = {
         "temperature": 1,
         "top_p": 0.95,
